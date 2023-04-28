@@ -13,31 +13,38 @@ function Bots() {
      
 
   return (
-    <div className='card-container'>Bots
+    <ol>
+    <div className='card-container'>
+     
           {bots.map((bot) =>{
              return(
+               
                 <div className='card' key ={bot.id}>
-                     <div className='card-image'><img src ={bot.avatar_url} alt=''/><br/></div>
-                     <div>{bot.name}<br/>
+                    
+                     <div className='card-image'>
+                        <img src ={bot.avatar_url} alt=''/><br/></div>
+                     <div className='card-name'>
+                         {bot.name}<br/>
                          {bot.catchphrase}<br/>
                       </div>
-                       <div>
-                       {bot.health}
+                       <div className='card-details'>
+                       {bot.health}💔 
                        {bot.damage}
-                       {bot.armor}
+                       {bot.armor} 
                        {bot.bot_class}
                        {bot.created_at}
                        {bot.updated_at}
                        </div>
-                    
+                       
                 </div>
+               
              )
                 
             })
           }
     </div>
   
-
+   </ol>
   )
 }
 
