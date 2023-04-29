@@ -37,18 +37,25 @@
   }
 }
 .card{
-  border:1px solid black;
-  box-shadow: 0 0 5px black;
-  width: 450px;
-  margin: 20px;
-  height: 350px;
-  float: left;
-
+  text-align: center;
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    padding: 1em;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border:1px solid black;
+    box-shadow: 0 0 5px black;
+    width: 350px;
+    height:fit-content;
+    margin: 10px;
+    background-color: azure;
+    
   
   
 }
 .card-image img{
-  width:200px ;
+  height: 90px;
+  width:90px ;
 }
 .card-container{
  background-color: azure;

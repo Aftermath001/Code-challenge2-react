@@ -1,12 +1,13 @@
 import React,{useState , useEffect} from 'react'
+// import YourBotArmy from './YourBotArmy';
 // import bots from '../Components./db.json';
 function BotCollection() {
         const [bots, setBots] = useState([]);
- 
+      //   const[isToggled,setIsToggled] =useState(false);
 
 
   useEffect(() => {
-    fetch("http://localhost:8001/bots")
+    fetch("https://bots-database.onrender.com/bots")
       .then((res) => res.json())
       .then((bots) => setBots(bots));
 
@@ -15,26 +16,25 @@ function BotCollection() {
 
   return (
     <ol>
-    <div className='card-container'>
-     
+    <div className='card-container' >
+        
           {bots.map((bot) =>{
              return(
                
                 <div className='card' key ={bot.id}>
-                    
-                     <div className='card-image'>
-                        <img src ={bot.avatar_url} alt=''/><br/></div>
-                     <div className='card-name'>
-                         {bot.name}<br/>
-                         {bot.catchphrase}<br/>
-                      </div>
+                    <div className='card-name'>
+                           <h3>Name: {bot.name}</h3>
+                            </div>
+                            <div className='card-image'>
+                     <img src ={bot.avatar_url} alt=''/>
+                           </div>   
                        <div className='card-details'>
-                       {bot.health}
-                       {bot.damage}
-                       {bot.armor} 
-                       {bot.bot_class}
-                       {bot.created_at}
-                       {bot.updated_at}
+                            <p>Health: {bot.health} {"    "}
+                            Damage: {bot.damage} {"    "}
+                            Armor: {bot.armor}</p>
+                            <p>Class: {bot.bot_class}</p>
+                            <p>D.O.C: {bot.created_at}</p>
+                            <p>D.O.U: {bot.updated_at}</p>
                        </div>
                      <div>
                         <button style={{backgroundColor: 'red'}}>X</button>
