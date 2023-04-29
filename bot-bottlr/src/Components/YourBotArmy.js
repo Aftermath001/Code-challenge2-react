@@ -1,9 +1,9 @@
 import React from 'react'
 
-function DisplayBots() {
+function YourBotArmy() {
   return (
     <div className='displayBots'></div>
   )
 }
 
-export default DisplayBots
+export default YourBotArmy

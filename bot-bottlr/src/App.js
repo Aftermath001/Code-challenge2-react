@@ -1,13 +1,13 @@
-import Bots from './Components/Bots';
+import BotCollection from './Components/BotCollection';
 import './App.css';
-import DisplayBots from './Components/DisplayBots';
+import YourBotArmy from './Components/YourBotArmy';
 
 function App() {
   return (
    
     <div className="App">
-       <DisplayBots/>
-     <Bots />
+       <YourBotArmy/>
+     <BotCollection />
     </div>
   );
 }
