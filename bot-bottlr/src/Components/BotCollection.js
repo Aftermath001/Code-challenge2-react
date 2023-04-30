@@ -15,26 +15,29 @@ function BotCollection() {
      
 
   return (
-    <ol>
+    
     <div className='card-container' >
         
           {bots.map((bot) =>{
+            const {id,name,avatar_url,health,damage,armor,catchphrase,bot_class,created_at,updated_at}= bot
              return(
                
-                <div className='card' key ={bot.id}>
+                <div className='card' key ={id}>
                     <div className='card-name'>
-                           <h3>Name: {bot.name}</h3>
+                           <h3>Name: {name}</h3>
                             </div>
                             <div className='card-image'>
-                     <img src ={bot.avatar_url} alt=''/>
+                           <img src ={avatar_url} alt=''/>
                            </div>   
                        <div className='card-details'>
-                            <p>Health: {bot.health} {"    "}
-                            Damage: {bot.damage} {"    "}
-                            Armor: {bot.armor}</p>
-                            <p>Class: {bot.bot_class}</p>
-                            <p>D.O.C: {bot.created_at}</p>
-                            <p>D.O.U: {bot.updated_at}</p>
+                            <p>Health: {health} {"    "}
+                                    
+                            Damage: {damage} {"    "}
+                            Armor: {armor}</p>
+                            <p>catchphrase:{catchphrase}</p>
+                            <p>Class: {bot_class}</p>
+                            <p>D.O.C: {created_at}</p>
+                            <p>D.O.U: {updated_at}</p>
                        </div>
                      <div>
                         <button style={{backgroundColor: 'red'}}>X</button>
@@ -48,7 +51,7 @@ function BotCollection() {
           }
     </div>
   
-   </ol>
+   
   )
 }
 
