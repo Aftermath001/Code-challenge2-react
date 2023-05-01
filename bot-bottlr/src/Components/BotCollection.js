@@ -1,11 +1,19 @@
 import React,{useState , useEffect} from 'react'
 // import YourBotArmy from './YourBotArmy';
 // import bots from '../Components./db.json';
-function BotCollection() {
+function BotCollection({incoming}) {
         const [bots, setBots] = useState([]);
-      //   const[isToggled,setIsToggled] =useState(false);
+        const[alvBots,setAlvBots] =useState([]);
 function handleSubmit(event){
    let id = event.target.id
+   // create an array if id
+   let alvBotsArr=[...alvBots,id]
+   // Remove the duplicates 
+   let alvBotsArr2=[...new Set(alvBotsArr)]
+   // change the state of empty array
+   setAlvBots(alvBotsArr2)
+   // pass the data from child to parent
+   incoming(alvBots)
    console.log(id)
 }
 
