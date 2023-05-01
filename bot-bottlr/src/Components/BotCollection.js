@@ -4,7 +4,10 @@ import React,{useState , useEffect} from 'react'
 function BotCollection() {
         const [bots, setBots] = useState([]);
       //   const[isToggled,setIsToggled] =useState(false);
-
+function handleSubmit(event){
+   let id = event.target.id
+   console.log(id)
+}
 
   useEffect(() => {
     fetch("https://bots-database.onrender.com/bots")
@@ -34,13 +37,14 @@ function BotCollection() {
                                     
                             Damage: {damage} {"    "}
                             Armor: {armor}</p>
-                            <p>catchphrase:{catchphrase}</p>
+                            <p>{catchphrase}</p>
                             <p>Class: {bot_class}</p>
                             <p>D.O.C: {created_at}</p>
                             <p>D.O.U: {updated_at}</p>
                        </div>
                      <div>
                         <button style={{backgroundColor: 'red'}}>X</button>
+                        <button onClick={handleSubmit} id={id}>Add to Army </button>
                         </div>  
                        
                 </div>
