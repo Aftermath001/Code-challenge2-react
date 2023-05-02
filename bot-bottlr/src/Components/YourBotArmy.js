@@ -1,15 +1,25 @@
-import React from 'react'
-// import BotCollection from './BotCollection';
+import React from "react";
+import BotCard from "./BotCard";
 
-function YourBotArmy() {
-  // const[isToggled,setIsToggled] =useState(false);
+function YourBotArmy({ army, removeFromArmy, dischargeBot }) {
+  
+  
   return (
-    <div className='displayBots'>
-      {/* <button onClick={()=>setIsToggled(!isToggled)}>Toggle</button>
-      {isToggled && <BotCollection/>} */}
-        I am Here
+    <div className="your-bot-army">
+      {army.length > 0 ? (
+        army.map((bot) => (
+          <BotCard
+            key={bot.id}
+            bot={bot}
+            removeFromArmy={removeFromArmy}
+            deleteBot={dischargeBot}
+          />
+        ))
+      ) : (
+        <p> You haven't enlisted any bots yet.</p>
+      )}
     </div>
-  )
+  );
 }
 
-export default YourBotArmy
+export default YourBotArmy;
